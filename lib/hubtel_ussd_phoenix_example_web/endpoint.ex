@@ -44,6 +44,6 @@ defmodule HubtelUssdPhoenixExampleWeb.Endpoint do
 
   plug CORSPlug,
     origin: ["*"]
-    
+
   plug HubtelUssdPhoenixExampleWeb.Router
 end
