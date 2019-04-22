@@ -1,0 +1,19 @@
+{
+  "name": "Hubtel USSD Phoenix Example",
+  "description": "Hubtel USSD app built with Elixir's Phoenix Framework for learning purposes ",
+  "repository": "https://github.com/manfordbenjamin/hubtel-ussd-phoenix-example.git",
+  "logo": "https://raw.githubusercontent.com/manfordbenjamin/hubtel-ussd-phoenix-example/master/icon.png",
+  "keywords": ["elixir", "phoenix", "heroku", "ussd"],
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "env": {
+    "SECRET_KEY_BASE": "+fgIw201/srrsfOcgUe+iBS24kfnVb/qIwYRHcuXjaHNUIIc0kkJYzUpcci50hM9"
+  },
+  "buildpacks": [
+  	{
+    	"url": "https://github.com/HashNuke/heroku-buildpack-elixir.git"
+  	},
+  	{
+    	"url": "https://github.com/gjaldon/heroku-buildpack-phoenix-static.git"
+  	}
+  ]
+}
