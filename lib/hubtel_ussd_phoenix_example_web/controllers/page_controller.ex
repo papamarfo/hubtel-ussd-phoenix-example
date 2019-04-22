@@ -20,7 +20,7 @@ defmodule HubtelUssdPhoenixExampleWeb.PageController do
             Type: "Response"
           }
 
-          send_resp(conn, :ok, Jason.encode!(ussdResponse))
+          sendResponse(conn, :ok, ussdResponse)
 
         # continuing request
         "Response" ->
@@ -38,17 +38,29 @@ defmodule HubtelUssdPhoenixExampleWeb.PageController do
                       Type: "Release"
                     }
 
-                    send_resp(conn, :ok, Jason.encode!(ussdResponse))
+                    sendResponse(conn, :ok, ussdResponse)
                   else
-                    ussdResponse = %{Message: "Invalid USSD request", Type: "Release"}
-                    send_resp(conn, :ok, Jason.encode!(ussdResponse))
+                    ussdResponse = %{
+                      Message: "Invalid USSD request", 
+                      Type: "Release"
+                    }
+
+                    sendResponse(conn, :ok, ussdResponse)
                   end
               end
           end
       end
     else
-      ussdResponse = %{Message: "Invalid USSD request", Type: "Release"}
-      send_resp(conn, :ok, Jason.encode!(ussdResponse))
+      ussdResponse = %{
+        Message: "Invalid USSD request",
+        Type: "Release"
+      }
+      
+      sendResponse(conn, :ok, ussdResponse)
     end
+  end
+
+  def sendResponse(conn, :ok, ussdResponse) do
+    send_resp(conn, :ok, Jason.encode!(ussdResponse))
   end
 end
