@@ -39,6 +39,10 @@ ngrok http 4000
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
  -->
 
+### Peak of PageController Logic
+
+[PageController](https://github.com/manfordbenjamin/hubtel-ussd-phoenix-example/blob/master/lib/hubtel_ussd_phoenix_example_web/controllers/page_controller.ex)
+
 
 ### Authors
 
